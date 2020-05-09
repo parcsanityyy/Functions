@@ -1,0 +1,28 @@
+import string
+
+def palindrome(word):
+	input_ = word
+	word = word.lower()
+	word = word.replace(" ", "")
+	
+	for char in string.punctuation:
+		word = word.replace(char, '')
+
+	letters = []
+	for char in word:
+		letters.append(char)
+
+	index = 0
+	palindrome = True
+	while(index != len(letters)):
+		if letters[index] == letters[-(1+index)]:
+			palindrome = True
+		else:
+			palindrome = False
+			return print("Word is not a palindrome.")
+
+		index+=1
+	
+	return print("\"" + input_ +"\"" + " is a palindrome.")
+
+palindrome("Eva, can I see bees in a cave?")
