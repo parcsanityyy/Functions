@@ -1,28 +1,16 @@
-import string
+def palindrome(string):
+    
+    reversed_string = []
+    i = -1
+    for letter in string:
+        reversed_string.append(string[i])
+        i += -1
+        
+    pointer = 0
 
-def palindrome(word):
-	input_ = word
-	word = word.lower()
-	word = word.replace(" ", "")
-	
-	for char in string.punctuation:
-		word = word.replace(char, '')
-
-	letters = []
-	for char in word:
-		letters.append(char)
-
-	index = 0
-	palindrome = True
-	while(index != len(letters)):
-		if letters[index] == letters[-(1+index)]:
-			palindrome = True
-		else:
-			palindrome = False
-			return print("Word is not a palindrome.")
-
-		index+=1
-	
-	return print("\"" + input_ +"\"" + " is a palindrome.")
-
-palindrome("Eva, can I see bees in a cave?")
+    
+    for letter_1, letter_2 in zip(string, reversed_string):
+        if letter_1 == letter_2:
+            return print(True)
+        else:
+            return print(False)
